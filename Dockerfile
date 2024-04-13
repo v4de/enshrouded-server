@@ -31,20 +31,6 @@ ENV GAME_PORT=15636
 ENV QUERY_PORT=15637
 ENV SLOT_COUNT=16
 
-# Update json configuration file
-RUN config=enshrouded_server.json && \
-    config_tmp=enshrouded_server_tmp.json && \
-    jq --arg name "$NAME" '.name = $name' $config | \
-    jq --arg password "$PASSWORD" '.password = $password' | \
-    jq --arg saveDir "$SAVE_DIRECTORY" '.saveDirectory = $saveDir' | \
-    jq --arg logDir "$LOG_DIRECTORY" '.logDirectory = $logDir' | \
-    jq --arg ip "$IP" '.ip = $ip' | \
-    jq --argjson gamePort "$GAME_PORT" '.gamePort = $gamePort' | \
-    jq --argjson queryPort "$QUERY_PORT" '.queryPort = $queryPort' | \
-    jq --argjson slotCount "$SLOT_COUNT" '.slotCount = $slotCount' \
-    > $config_tmp && \
-    mv $config_tmp $config
-
 # Switch to 'apps' user for the container runtime
 USER apps
 
