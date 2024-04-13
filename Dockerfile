@@ -24,8 +24,8 @@ RUN echo -e "\n[multilib]\nInclude = /etc/pacman.d/mirrorlist" >> /etc/pacman.co
 # Set environment variables with default values
 ENV NAME=Server
 ENV PASSWORD=
-ENV SAVE_DIRECTORY=./persistence/savegame
-ENV LOG_DIRECTORY=./persistence/logs
+ENV SAVE_DIRECTORY=/persistence/savegame
+ENV LOG_DIRECTORY=/persistence/logs
 ENV IP=0.0.0.0
 ENV GAME_PORT=15636
 ENV QUERY_PORT=15637
