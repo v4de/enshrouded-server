@@ -7,7 +7,7 @@ This Dockerfile is designed to set up a Enshrouded dedicated server in a Docker 
 You can customize your Enshrouded server by setting the appropriate environment variables. Here are the variables available:
 
 - **NAME**: Server name to display in the server browser (default: `Server`).
-- **PASSWORD**: Server password, blank is no password (default: ``).
+- **PASSWORD**: Server password, blank is no password (default: ` `).
 - **SAVE_DIRECTORY**: The save game directory (default: `./savegame`).
 - **LOG_DIRECTORY**: The logging directory (default: `./logs`).
 - **IP**: The IP address to bind to (default: `0.0.0.0`).
