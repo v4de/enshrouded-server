@@ -26,4 +26,5 @@ Make sure to port expose and forward;
 ## Persistence
 
 Mount the persistence directory to `/persistence`
+
 Make sure the directory on TrueNAS is owned by the user and group `apps`
