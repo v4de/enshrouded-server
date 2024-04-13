@@ -1,42 +1,27 @@
-# PixARK Server
+# Enshrouded Server
 
-This Dockerfile is designed to set up a PixARK dedicated server in a Docker container on TrueNAS Scale primarily.
+This Dockerfile is designed to set up a Enshrouded dedicated server in a Docker container on TrueNAS Scale primarily.
 
 ## Setting Environment Variables
 
-You can customize your PixARK server by setting the appropriate environment variables. Here are the variables available:
+You can customize your Enshrouded server by setting the appropriate environment variables. Here are the variables available:
 
-- **SERVER_NAME**: Server name to display in the server browser (default: `PixarkContainer`).
-- **WORLD_DIR**: Directory name for the world (default: `world`).
-- **WORLD_TYPE**: Defines the world type (default: `CubeWorld_Light`).
-- **SEED**: Seed for map generation (default: `12345`).
-- **MAX_PLAYERS**: Max number of players (default: `20`).
-- **STEAM_PORT**: Steam port (default: `27015`).
-- **QUERY_PORT**: Query port (default: `27016`).
-- **RCON_PORT**: RCON port (default: `27017`).
-- **CUBE_PORT**: Cube port (default: `27018`).
-- **DELAY_REG_SERVER**: Delay server registration (default: `True`).
-- **RAW_SOCKETS**: Use raw sockets (default: `True`).
-- **SERVER_ADMIN_PASSWORD**: Admin password (default: `letmein`).
-- **RCON_ENABLED**: Enable RCON (default: `True`).
-- **CULTURE_FOR_COOKING**: Language culture for cooking (default: `en`).
-- **LOG**: Enable logging (default: `True`).
-- **GAMEPLAY_LOGGING**: Enable gameplay logging (default: `True`).
-- **NO_BATTLEYE**: Disable BattleEye (default: `True`).
-- **USE_ALT_DIR**: Use alternative directory (default: `False`).
-- **ALT_SAVE_DIR**: (Optional) Alternative save directory.
-- **SERVER_PASSWORD**: (Optional) Server password.
-- **ADDITIONAL_ARGS**: (Optional) Additional arguments.
+- **NAME**: Server name to display in the server browser (default: `Server`).
+- **PASSWORD**: Server password, blank is no password (default: ``).
+- **SAVE_DIRECTORY**: The save game directory (default: `./persistence/savegame`).
+- **LOG_DIRECTORY**: The logging directory (default: `./persistence/logs`).
+- **IP**: The IP address to bind to (default: `0.0.0.0`).
+- **GAME_PORT**: Game port (default: `15636`).
+- **QUERY_PORT**: Query port must be +1 to the GAME_PORT (default: `15637`).
+- **SLOT_COUNT**: Max number of players (default: `16`).
 
 ## Port forwarding (TCP and UDP)
 
 > Exposed and forwarded ports must be the same, no remapping.
 
 Make sure to port expose and forward;
-- STEAM_PORT
+- GAME_PORT
 - QUERY_PORT
-- RCON_PORT
-- CUBE_PORT
 
 ## Persistence
 
